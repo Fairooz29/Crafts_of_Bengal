@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment and Shipping | Crafts of Bengal</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .payment-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 2.5rem 0 3rem 0;
+    }
+    .payment-title {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+    }
+    .payment-form label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      margin-top: 1.2rem;
+    }
+    .payment-form input,
+    .payment-form select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      background: #faf9f7;
+      margin-bottom: 0.2rem;
+      box-sizing: border-box;
+    }
+    .payment-form-row {
+      display: flex;
+      gap: 1rem;
+    }
+    .payment-form-row > div {
+      flex: 1;
+    }
+    .payment-form-checkbox {
+      display: flex;
+      align-items: center;
+      margin-top: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .payment-form-checkbox input[type="checkbox"] {
+      margin-right: 0.6rem;
+    }
+    .payment-form button {
+      width: 100%;
+      background: #ed7b2a;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.08rem;
+      padding: 0.9rem 0;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .payment-form button:hover {
+      background: #c9651e;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="page-card">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-title">
+          <div class="logo-icon"></div>
+          <h2 class="site-title">Crafts of Bengal</h2>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="handicrafts.html">Shop</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <form class="search-bar" action="#" method="get">
+            <input type="text" placeholder="Search" aria-label="Search" />
+            <button type="submit" aria-label="Search">
+              <span class="icon-search"></span>
+            </button>
+          </form>
+          <button class="icon-btn" aria-label="Cart"><span class="icon-cart"></span></button>
+          <img src="assets/images/profile.jpg" alt="Profile" class="profile-avatar" />
+        </div>
+      </header>
+
+      <main style="flex:1;">
+        <div class="payment-container">
+          <div class="payment-title">Payment and Shipping</div>
+          <form class="payment-form">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" />
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" />
+
+            <div class="payment-form-row">
+              <div>
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" />
+              </div>
+              <div>
+                <label for="postal">Postal Code</label>
+                <input type="text" id="postal" name="postal" placeholder="Enter your postal code" />
+              </div>
+            </div>
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="">Select country</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="India">India</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" />
+
+            <label for="card">Card Number</label>
+            <input type="text" id="card" name="card" placeholder="Enter your card number" />
+
+            <div class="payment-form-row">
+              <div>
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" />
+              </div>
+              <div>
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" />
+              </div>
+            </div>
+
+            <div class="payment-form-checkbox" style="display:flex;align-items:center;margin:1.2rem 0 1.5rem 0;">
+              <input type="checkbox" id="saveinfo" name="saveinfo" />
+              <label for="saveinfo" style="margin:0 0 0 0.5rem;">Save this information for future purchases</label>
+            </div>
+
+            <button type="submit" style="color:#181411;">Submit Payment</button>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html> 
