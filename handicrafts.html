@@ -13,14 +13,13 @@
       <header class="header">
         <div class="logo-title">
           <div class="logo-icon"></div>
-          <h2 class="site-title">CraftsBD</h2>
+          <h2 class="site-title">Crafts of Bengal</h2>
         </div>
         <nav class="nav-links">
           <a href="index.html">Home</a>
-          <a href="#">Categories</a>
-          <a href="#">Artisans</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
+          <a href="artisan.html">Artisans</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </nav>
         <div class="header-actions">
           <form class="search-bar" action="#" method="get">
@@ -29,9 +28,9 @@
               <span class="icon-search"></span>
             </button>
           </form>
-          <button class="icon-btn" aria-label="Favorites"><span class="icon-heart"></span></button>
-          <button class="icon-btn" aria-label="Cart"><span class="icon-cart"></span></button>
-          <img src="assets/images/profile.jpg" alt="Profile" class="profile-avatar" />
+          <button class="icon-btn" aria-label="Favorites" onclick="alert('Favorites coming soon!')"><span class="icon-heart"></span></button>
+          <a href="cart.html" class="icon-btn" aria-label="Cart"><span class="icon-cart"></span></a>
+          <a href="profile.html" class="profile-avatar-link"><img src="assets/images/profile.jpg" alt="Profile" class="profile-avatar" /></a>
         </div>
       </header>
 
@@ -40,92 +39,29 @@
         <section style="max-width:1200px;margin:0 auto;padding:2rem 0;">
           <h1 class="section-title" style="padding-bottom:0.5rem;">Handicrafts</h1>
           <div style="display:flex;gap:1rem;margin-bottom:2rem;">
-            <select style="padding:0.5rem 1.5rem;border-radius:0.5rem;border:1px solid #e0e0e0;background:#faf9f7;font-size:1rem;">
+            <select id="category-select" style="padding:0.5rem 1.5rem;border-radius:0.5rem;border:1px solid #e0e0e0;background:#faf9f7;font-size:1rem;">
               <option>Categories</option>
             </select>
-            <select style="padding:0.5rem 1.5rem;border-radius:0.5rem;border:1px solid #e0e0e0;background:#faf9f7;font-size:1rem;">
-              <option>Regions</option>
-            </select>
-            <select style="padding:0.5rem 1.5rem;border-radius:0.5rem;border:1px solid #e0e0e0;background:#faf9f7;font-size:1rem;">
+            <select id="artisan-select" style="padding:0.5rem 1.5rem;border-radius:0.5rem;border:1px solid #e0e0e0;background:#faf9f7;font-size:1rem;">
               <option>Artisans</option>
             </select>
           </div>
-          <div class="collection-grid" style="grid-template-columns:repeat(4,1fr);gap:2rem;">
-            <div class="collection-card">
-              <img src="assets/images/handicraft1.jpg" alt="Nakshi Kantha Embroidery" />
-              <div class="collection-title">Nakshi Kantha Embroidery</div>
-              <div class="artisan-bio">Intricate embroidered<br>quilts and textiles</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft2.jpg" alt="Jamdani Weaving" />
-              <div class="collection-title">Jamdani Weaving</div>
-              <div class="artisan-bio">Fine muslin textiles<br>with geometric patterns</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft3.jpg" alt="Terracotta Pottery" />
-              <div class="collection-title">Terracotta Pottery</div>
-              <div class="artisan-bio">Baked clay art<br>and decorative items</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft4.jpg" alt="Shital Pati Mats" />
-              <div class="collection-title">Shital Pati Mats</div>
-              <div class="artisan-bio">Cooling mats woven<br>from Murta plants</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft5.jpg" alt="Dhokra Metal Casting" />
-              <div class="collection-title">Dhokra Metal Casting</div>
-              <div class="artisan-bio">Lost-wax casting<br>of metal sculptures</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft6.jpg" alt="Bamboo Crafts" />
-              <div class="collection-title">Bamboo Crafts</div>
-              <div class="artisan-bio">Functional and decorative<br>items from bamboo</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft7.jpg" alt="Wood Carvings" />
-              <div class="collection-title">Wood Carvings</div>
-              <div class="artisan-bio">Carved wooden furniture<br>and decorative pieces</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft8.jpg" alt="Conch Shell Crafts" />
-              <div class="collection-title">Conch Shell Crafts</div>
-              <div class="artisan-bio">Ornaments and decorative<br>items from conch shells</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft9.jpg" alt="Jute Products" />
-              <div class="collection-title">Jute Products</div>
-              <div class="artisan-bio">Eco-friendly products<br>made from jute fibers</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft10.jpg" alt="Handloom Textiles" />
-              <div class="collection-title">Handloom Textiles</div>
-              <div class="artisan-bio">Handwoven fabrics<br>with traditional motifs</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft11.jpg" alt="Pottery" />
-              <div class="collection-title">Pottery</div>
-              <div class="artisan-bio">Earthenware and<br>ceramic pottery</div>
-            </div>
-            <div class="collection-card">
-              <img src="assets/images/handicraft12.jpg" alt="Jewelry" />
-              <div class="collection-title">Jewelry</div>
-              <div class="artisan-bio">Traditional and contemporary<br>jewelry</div>
-            </div>
-          </div>
+          <div class="collection-grid"></div>
         </section>
       </main>
 
       <!-- Footer -->
       <footer class="footer">
         <nav class="footer-links">
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </nav>
         <p class="footer-text">@2024 Crafts of Bengal. All rights reserved.</p>
       </footer>
     </div>
   </div>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html> 
