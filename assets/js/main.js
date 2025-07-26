@@ -688,15 +688,10 @@ function loadProducts(categoryId = null, artisanId = null) {
             if (!grid) return;
             grid.innerHTML = '';
             products.forEach(product => {
-                let artisanHtml = '';
-                if (product.artisan_id && product.artisan_name) {
-                    artisanHtml = `<div class='product-artisan'>By <a href='artisan.html?id=${product.artisan_id}' style='color:#b05c0b;text-decoration:underline;'>${product.artisan_name}</a></div>`;
-                }
                 grid.innerHTML += `
                     <a href="product.html?id=${product.id}" class="collection-card">
                         <img src="${product.image}" alt="${product.name}" />
                         <div class="collection-title">${product.name}</div>
-                        ${artisanHtml}
                         <div class="artisan-bio">${product.description}</div>
                         <div class="product-price">৳${product.price}</div>
                     </a>
@@ -705,31 +700,6 @@ function loadProducts(categoryId = null, artisanId = null) {
         })
         .catch(error => {
             console.error('Error loading products:', error);
-        });
-}
-
-function loadArtisans() {
-    const select = document.getElementById('artisan-select');
-    if (!select) return;
-    fetch('backend/api/get_artisans.php')
-        .then(response => response.json())
-        .then(artisans => {
-            select.innerHTML = '';
-            artisans.forEach(artisan => {
-                select.innerHTML += `<option value="${artisan.id}">${artisan.name}</option>`;
-            });
-            select.addEventListener('change', function() {
-                const artisanId = this.value;
-                const categoryId = document.getElementById('category-select')?.value || null;
-                if (artisanId) {
-                    loadProducts(categoryId, artisanId);
-                } else {
-                    loadProducts(categoryId);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error loading artisans:', error);
         });
 }
 
@@ -743,17 +713,9 @@ function loadCategories() {
     fetch('backend/api/get_categories.php')
         .then(response => response.json())
         .then(categories => {
-            select.innerHTML = '';
+            select.innerHTML = '<option value="">Categories</option>';
             categories.forEach(category => {
                 select.innerHTML += `<option value="${category.id}">${category.name}</option>`;
-            });
-            select.addEventListener('change', function() {
-                const categoryId = this.value;
-                if (categoryId) {
-                    loadProducts(categoryId);
-                } else {
-                    loadProducts();
-                }
             });
         })
         .catch(error => {
@@ -761,18 +723,37 @@ function loadCategories() {
         });
 }
 
-// On handicrafts.html, load categories, artisans, and products
+function loadArtisans() {
+    const select = document.getElementById('artisan-select');
+    if (!select) return;
+    fetch('backend/api/get_artisans.php')
+        .then(response => response.json())
+        .then(artisans => {
+            select.innerHTML = '<option value="">Artisans</option>';
+            artisans.forEach(artisan => {
+                select.innerHTML += `<option value="${artisan.id}">${artisan.name}</option>`;
+            });
+        })
+        .catch(error => {
+            console.error('Error loading artisans:', error);
+        });
+}
+
+function setupHandicraftsFilters() {
+    const categorySelect = document.getElementById('category-select');
+    const artisanSelect = document.getElementById('artisan-select');
+    if (!categorySelect || !artisanSelect) return;
+    function handleFilterChange() {
+        const categoryId = categorySelect.value || null;
+        const artisanId = artisanSelect.value || null;
+        loadProducts(categoryId, artisanId);
+    }
+    categorySelect.addEventListener('change', handleFilterChange);
+    artisanSelect.addEventListener('change', handleFilterChange);
+}
+
 if (window.location.pathname.includes('handicrafts.html')) {
     loadCategories();
     loadArtisans();
-    loadProducts();
-    document.getElementById('category-select').addEventListener('change', function() {
-        const categoryId = this.value;
-        const artisanId = document.getElementById('artisan-select')?.value || null;
-        if (categoryId) {
-            loadProducts(categoryId, artisanId);
-        } else {
-            loadProducts(null, artisanId);
-        }
-    });
+    setTimeout(setupHandicraftsFilters, 500); // Wait for dropdowns to populate
 } 

@@ -206,42 +206,69 @@ a {
 
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   padding: 0 2rem 2rem;
   justify-items: center;
-  max-width: 1040px;
+  max-width: 1100px;
   margin: 0 auto 2.5rem auto;
 }
+
 .collection-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  align-items: flex-start;
+  width: 230px;
   height: 300px;
-  background: #f7f6f4;
+  background: #fff;
   border-radius: 1.1rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
   overflow: hidden;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: box-shadow 0.2s;
+}
+.collection-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 .collection-card img {
   width: 100%;
-  height: 70%;
+  height: 52%;
   object-fit: cover;
   border-radius: 1.1rem 1.1rem 0 0;
   display: block;
 }
 .collection-title {
-  height: 35%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: #181411;
-  text-align: center;
+  text-align: left;
   width: 100%;
-  padding: 0 0.5rem;
+  margin: 0.7rem 0 0.2rem 1rem;
+  height: auto;
+  display: block;
+  padding: 0;
+}
+.artisan-bio {
+  font-size: 0.97rem;
+  color: #6d6257;
+  text-align: left;
+  width: 100%;
+  margin: 0 0 0 1rem;
+  line-height: 1.4;
+}
+select {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.7rem;
+  border: 1px solid #e0e0e0;
+  background: #faf9f7;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  outline: none;
+  transition: border 0.2s;
+}
+select:focus {
+  border: 1.5px solid #b05c0b;
 }
 
 .artisan-grid {
@@ -1546,5 +1573,263 @@ a {
   
   .contact-title {
     font-size: 2rem;
+  }
+}
+
+.product-price {
+  text-align: center;
+  font-weight: 600;
+  color: #181411;
+  margin-top: 0.5rem;
+}
+
+/* Artisan Page Styles */
+.artisan-main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.artisan-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Artisan Profile Section */
+.artisan-profile {
+  margin-bottom: 3rem;
+}
+
+.artisan-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.artisan-avatar {
+  flex-shrink: 0;
+}
+
+.artisan-avatar img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.artisan-info {
+  flex: 1;
+}
+
+.artisan-info h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #181411;
+}
+
+.artisan-info #artisan-title {
+  font-size: 1.05rem;
+  color: #6d5c4a;
+  margin: 0 0 1rem 0;
+}
+
+.artisan-info #artisan-description {
+  font-size: 1.01rem;
+  line-height: 1.7;
+  color: #3d332a;
+  margin: 0;
+}
+
+/* Featured Section */
+.featured-section {
+  margin-bottom: 3rem;
+}
+
+.featured-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #181411;
+}
+
+.featured-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.featured-product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.featured-product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.featured-product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.featured-product-card h3 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #181411;
+  text-align: center;
+}
+
+/* About Section */
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #181411;
+}
+
+.about-section p {
+  font-size: 1.01rem;
+  line-height: 1.7;
+  color: #3d332a;
+  margin: 0;
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin-bottom: 2rem;
+}
+
+.reviews-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #181411;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.reviewer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer-info h4 {
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #181411;
+}
+
+.review-date {
+  font-weight: 400;
+  color: #a08c7a;
+  font-size: 0.97rem;
+}
+
+.review-rating {
+  color: #ed7b2a;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.review-text {
+  font-size: 1.01rem;
+  line-height: 1.5;
+  color: #3d332a;
+  margin: 0 0 1rem 0;
+}
+
+.review-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #6d5c4a;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #f4f2f0;
+}
+
+/* Responsive Design for Artisan Page */
+@media (max-width: 768px) {
+  .artisan-container {
+    padding: 0 1rem;
+  }
+  
+  .artisan-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .featured-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .artisan-avatar img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .artisan-info h1 {
+    font-size: 1.25rem;
   }
 }
